@@ -1,11 +1,10 @@
-from email_reader.reader import EmailReader
-from email_reader.reader import EmailReader
+from mailpeek.reader import EmailReader
 import os
 
 # --- Configuration ---
-IMAP_HOST = "imap.gmail.com"
-EMAIL = "dbg.qatesting2@gmail.com"
-PASSWORD = "wfvmzrjfitevkktq"  # Use App Password or OAuth2 token if Gmail
+IMAP_HOST = "imap.your-provider.com"
+EMAIL = "your-email@example.com"
+PASSWORD = "your-app-password"  # Use an App Password or OAuth2 token
 FOLDER = "INBOX"
 
 
@@ -17,7 +16,7 @@ def save_attachment_to_disk(stream, filename, download_dir="downloads"):
     print(f"✅ Saved: {filepath}")
 
 
-# --- Config ---
+# --- Setup reader ---
 reader = EmailReader(
     host=IMAP_HOST,
     email=EMAIL,
@@ -26,7 +25,7 @@ reader = EmailReader(
     ssl=True,
 )
 
-# --- Read only PDF attachments from unread emails ---
+# --- Fetch unread emails with only PDF attachments ---
 emails = reader.fetch_unread(attachment_filename_contains=".pdf")
 
 for email in emails:
