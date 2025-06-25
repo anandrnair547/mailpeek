@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "email-reader"
+version = "0.1.0"
+description = "A lightweight IMAP-based email reader for Python/Django"
+authors = ["Anand R Nair <anand547@outlook.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "email_reader", from = "src" }]
+keywords = ["email", "imap", "inbox", "django", "cli", "attachment", "idle"]
+homepage = "https://github.com/anandrnair547/email-reader"
+repository = "https://github.com/anandrnair547/email-reader"
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+imapclient = "^3.0.1"
+pyzmail36 = "^1.0.5"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+
+[tool.poetry.scripts]
+email-reader = "email_reader.cli:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
