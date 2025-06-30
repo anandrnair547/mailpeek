@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from src.email_reader.reader import EmailReader
+from src.mailpeek.reader import EmailReader
 
 
 @pytest.fixture

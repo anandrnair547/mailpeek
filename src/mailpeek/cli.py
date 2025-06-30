@@ -1,5 +1,5 @@
 import argparse
-from email_reader.reader import EmailReader
+from mailpeek.reader import EmailReader
 
 
 def main():
